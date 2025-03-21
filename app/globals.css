@@ -1,1 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --padding-default: 5rem;
+    --padding-tight: 2rem;
+    --font-default: 'DM Sans', sans-serif;
+    --font-accent: 'Playfair Display', serif;
+  }
+  
+  html, body {
+    font-family: var(--font-default);
+  }
+}
+
+@layer components {
+  .font-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+  }
+  
+  .default-heading {
+    @apply text-8xl max-lg:text-6xl max-md:text-5xl font-semibold
+    tracking-tight; 
+  }
+
+  .default-subheading {
+    @apply text-5xl max-lg:text-4xl
+  }
+
+  .default-text {
+    @apply text-lg max-lg:text-base;
+  }
+
+  .default-padding {
+    @apply px-[var(--padding-default)] max-lg:px-[var(--padding-tight)];
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
