@@ -24,7 +24,7 @@ const Hero = () => {
       flex flex-col gap-y-8 justify-between max-lg:justify-start
     ">
 
-        <h1 className="default-heading">
+        <h1 className="default-heading z-10">
           I'm Micah, I build <br className="max-sm:hidden" />
           <span className="font-accent">full-stack</span> applications.
         </h1>
@@ -33,6 +33,7 @@ const Hero = () => {
         flex flex-col gap-y-2 
         self-end max-lg:self-start
         items-end max-lg:items-start
+        z-10
         ">
           {navLinks.map((link, index) => (
             <div key={index} className="
@@ -55,6 +56,7 @@ const Hero = () => {
           flex items-center gap-x-12 mt-6
           max-lg:self-end max-lg:mt-auto max-md:self-start
           max-md:flex-col max-md:items-start max-md:gap-y-4
+          z-10
         ">
           {highlights.map((highlight, index) => (
             <div key={index} className="flex flex-col gap-y-2">
