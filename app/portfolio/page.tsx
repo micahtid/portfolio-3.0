@@ -1,5 +1,7 @@
+"use client";
+
 import React from 'react'
-import Link from 'next/link'
+import useProjectModal from '@/hooks/useModal';
 
 // Mock project data
 const projects = [
@@ -30,6 +32,12 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const projectModal = useProjectModal();
+  
+  const handleOpenModal = (project: any) => {
+    projectModal.onOpen(project);
+  };
+  
   return (
     <section className="max-w-[1200px] w-full mx-auto px-6 max-lg:px-4 py-16 max-lg:py-8 space-y-16">
       <h2 className="default-subheading font-bold">Selected Projects</h2>
@@ -45,15 +53,15 @@ const Portfolio = () => {
               <h3 className="text-2xl font-bold text-gray-900 tracking-wide font-accent">{project.title}</h3>
               <p className="text-base text-gray-700 leading-relaxed">{project.description}</p>
 
-              <Link 
-                href={project.link}
+              <button 
+                onClick={() => handleOpenModal(project)}
                 className="inline-block w-min text-nowrap 
                 mt-2 px-6 py-2 
                 border border-black rounded-full 
                 hover:bg-black hover:text-white transition-colors"
               >
                 View more
-              </Link>
+              </button>
             </div>
 
             <img 

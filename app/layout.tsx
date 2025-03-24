@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Cursor from "@/components/Cursor";
+import ModalProvider from "@/providers/ModalProvider";
 
 export const metadata: Metadata = {
   title: "Micah's Portfolio",
@@ -21,6 +22,7 @@ export default function RootLayout({
           {/* <Cursor>
               {children}
           </Cursor> */}
+          <ModalProvider />
           {children}
       </body>
     </html>
