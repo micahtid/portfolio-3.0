@@ -3,8 +3,8 @@
 
 @layer base {
   :root {
-    --padding-default: 5rem;
-    --padding-tight: 2rem;
+    --padding-default: 16px;
+    --padding-tight: 8px;
     --font-default: 'DM Sans', sans-serif;
     --font-accent: 'Playfair Display', serif;
   }
@@ -30,7 +30,7 @@
   }
 
   .default-text {
-    @apply text-lg max-lg:text-base;
+    @apply text-xl max-lg:text-lg;
   }
 
   .default-padding {

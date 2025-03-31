@@ -7,7 +7,6 @@ import Link from "next/link";
 const ProjectModal = () => {
     const { isOpen, onClose, activeProject } = useProjectModal();
 
-    // Safely handle the case when activeProject is null
     const content = activeProject ? (
         <div className="flex flex-col gap-6">
             <div className="relative w-full aspect-video overflow-hidden rounded-lg">
@@ -47,7 +46,7 @@ const ProjectModal = () => {
             </div>
         </div>
     ) : (
-        <div className="py-8 text-center text-gray-500">No project selected</div>
+        <div className="py-8 text-center text-gray-500">No project selected!</div>
     );
 
     return (

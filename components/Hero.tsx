@@ -1,76 +1,58 @@
-import { FaBell } from "react-icons/fa";
-import { IoMdPin } from "react-icons/io";
-import { navLinks } from "@/data";
+import { socialLinks } from "@/data";
+import ButtonLink from "./ButtonLink";
+import React from "react";
 
 const Hero = () => {
-  const highlights = [
-    {
-      icon: <FaBell />,
-      title: "Current Status",
-      description: "Cambridge A-Level Student @ Surabaya European School"
-    },
-    {
-      icon: <IoMdPin />,
-      title: "Location",
-      description: "Surabaya, Indonesia"
-    }
-  ];
+  const linkClass = "underline text-gray-500 hover:text-gray-700 transition-colors";
 
   return (
     <section className="
-      max-w-[1920px] w-full mx-auto 
-      min-h-screen
+      max-w-[1200px] w-full mx-auto 
+      min-h-[calc(100vh-200px)]
       default-padding py-[120px] max-lg:py-20 max-md:py-12
-      flex flex-col gap-y-8 justify-between max-lg:justify-start
+      flex flex-col justify-center gap-y-8
+      max-lg:justify-start
     ">
 
-        <h1 className="default-heading z-10">
-          I'm Micah, I build <br className="max-sm:hidden" />
-          <span className="font-accent">full-stack</span> applications.
-        </h1>
+      <h1 className="default-subheading font-bold z-10">
+        I'm Micah, I build <br className="max-sm:hidden" />
+        <span className="font-accent font-medium">full-stack</span> applications.
+      </h1>
 
-        <div className="
-        flex flex-col gap-y-2 
-        self-end max-lg:self-start
-        items-end max-lg:items-start
-        z-10
-        ">
-          {navLinks.map((link, index) => (
-            <div key={index} className="
-              flex gap-x-2 items-center
-              group
-            ">
-              <div className="w-8 h-[1px] rounded-full bg-black/40 group-hover:w-0 transition-all duration-500 ease-in-out origin-right" style={{ minWidth: '0px' }} />
-              <a 
-                href={link.href} 
-                className="default-subheading font-accent whitespace-nowrap relative overflow-hidden"
-              >
-                <span className="relative z-10">{link.label}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black/70 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-              </a>
-            </div>
-          ))}
-        </div>
+      <p className="default-text">
+        I&apos;m an A-Levels student at <a href="https://surabayaeuropeanschool.com/id/" className={linkClass} target="_blank">
+          Surabaya European School
+        </a> and a prospective Computer Science student at <a href="https://raikes.unl.edu/" className={linkClass} target="_blank">
+          Jeffrey S. Raikes
+        </a> / <a href="https://www.purdue.edu/" className={linkClass} target="_blank">
+          Purdue
+        </a> / <a href="https://umich.edu/" className={linkClass} target="_blank">
+          University of Michigan
+        </a>.
+      </p>
 
-        <div className="
-          flex items-center gap-x-12 mt-6
-          max-lg:self-end max-lg:mt-auto max-md:self-start
-          max-md:flex-col max-md:items-start max-md:gap-y-4
-          z-10
-        ">
-          {highlights.map((highlight, index) => (
-            <div key={index} className="flex flex-col gap-y-2">
-              <div className="text-2xl max-md:text-xl">
-                {highlight.icon}
-              </div>
-              <div>
-                <h3 className="default-text font-semibold">{highlight.title}</h3>
-                <p className="default-text -mt-1 text-gray-700">{highlight.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <p className="default-text">
+      My tech stack includes React, Next.js, TailwindCSS, and Firebase.
+        While specializing in database management, I have a soft spot for minimal front-ends. Currently I&apos;m leading the development of <a href="/projects" className={linkClass}>Mira</a>!
+      </p>
 
+      
+      <ButtonLink text="Visit Portfolio" link="/portfolio" />
+
+      <div className="flex items-center gap-x-4">
+        {socialLinks.map((link, index) => (
+          <a 
+            key={index} 
+            href={link.href} 
+            className="default-text hover:opacity-70 transition-opacity"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Social link ${index + 1}`}
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
     </section>  
   );
 };
