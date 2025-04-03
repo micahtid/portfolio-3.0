@@ -37,9 +37,9 @@ const Hero = () => {
       </p>
 
       
-      <ButtonLink text="Visit Portfolio" link="/portfolio" />
+      {/* <ButtonLink text="Visit Portfolio" link="/portfolio" /> */}
 
-      <div className="flex items-center gap-x-4">
+      <div className="flex items-center gap-x-4 mt-4">
         {socialLinks.map((link, index) => (
           <a 
             key={index} 

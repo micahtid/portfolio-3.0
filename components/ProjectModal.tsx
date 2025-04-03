@@ -1,48 +1,94 @@
 "use client";
 
 import Modal from "./Modal";
-import useProjectModal from "../hooks/useModal";
-import Link from "next/link";
+import useProjectModal from "../hooks/useProjectModal";
 
 const ProjectModal = () => {
     const { isOpen, onClose, activeProject } = useProjectModal();
 
     const content = activeProject ? (
         <div className="flex flex-col gap-6">
-            <div className="relative w-full aspect-video overflow-hidden rounded-lg">
-                <img 
-                    src={activeProject.image} 
-                    alt={activeProject.title}
-                    className="object-cover w-full h-full"
-                />
+            {/* Showcase Image */}
+            {activeProject.imgShowcase && activeProject.imgShowcase.length > 0 ? (
+                <div className="w-full rounded-lg overflow-hidden shadow-md">
+                    <img 
+                        src={activeProject.imgShowcase[0]} 
+                        alt={`${activeProject.title} showcase`} 
+                        className="w-full object-cover h-64"
+                    />
+                </div>
+            ) : (
+                // Fallback to project image if no showcase images
+                <div className="w-full rounded-lg overflow-hidden shadow-md">
+                    <img 
+                        src={activeProject.image} 
+                        alt={activeProject.title} 
+                        className="w-full object-cover h-64"
+                    />
+                </div>
+            )}
+
+            {/* Description - Full Width */}
+            <div className="w-full bg-gray-50 p-5 rounded-lg">
+                <h4 className="text-lg font-medium mb-3 text-gray-800">Description</h4>
+                <p className="text-gray-700 leading-relaxed">
+                    {activeProject.description}
+                </p>
             </div>
-            
-            <div className="space-y-4">
-                <div>
-                    <h4 className="text-lg font-medium mb-2">Overview</h4>
-                    <p className="text-gray-700 leading-relaxed">
-                        {activeProject.description}
-                    </p>
+
+            {/* Technologies and URLs in same row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Technologies */}
+                <div className="bg-gray-50 p-5 rounded-lg">
+                    <h4 className="text-lg font-medium mb-3 text-gray-800">Technologies</h4>
+                    <div className="flex flex-wrap gap-3">
+                        {activeProject.technologies.map((tech, index) => (
+                            <div 
+                                key={index} 
+                                className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm"
+                            >
+                                <span className="text-gray-700">{tech.icon}</span>
+                                <span className="text-sm font-medium">{tech.name}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 
-                <div className="pt-2">
-                    <h4 className="text-lg font-medium mb-2">Key Features</h4>
-                    <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                        <li>Responsive design for all devices</li>
-                        <li>Modern user interface with intuitive navigation</li>
-                        <li>Performance optimized for fast loading times</li>
-                    </ul>
+                {/* Project Links */}
+                <div className="bg-gray-50 p-5 rounded-lg">
+                    <h4 className="text-lg font-medium mb-3 text-gray-800">Project Links</h4>
+                    <div className="space-y-3">
+                        {activeProject.appUrl && (
+                            <div className="overflow-hidden">
+                                <h5 className="text-sm font-semibold mb-1">App URL:</h5>
+                                <a 
+                                    href={activeProject.appUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer" 
+                                    className="text-blue-600 hover:underline"
+                                >
+                                    {activeProject.appUrl}
+                                </a>
+                            </div>
+                        )}
+                        
+
+                        
+                        {activeProject.videoUrl && (
+                            <div className="overflow-hidden">
+                                <h5 className="text-sm font-semibold mb-1">Video Demo:</h5>
+                                <a 
+                                    href={activeProject.videoUrl.replace('embed/', 'watch?v=')}
+                                    target="_blank"
+                                    rel="noopener noreferrer" 
+                                    className="text-blue-600 hover:underline"
+                                >
+                                    {activeProject.videoUrl}
+                                </a>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
-            
-            <div className="flex justify-center pt-4">
-                <Link 
-                    href={activeProject.link} 
-                    className="inline-block px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition-colors"
-                    target="_blank"
-                >
-                    View Project
-                </Link>
             </div>
         </div>
     ) : (
