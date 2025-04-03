@@ -1,20 +1,20 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-interface ArrowTextProps {
+interface ButtonLinkProps {
   text: string;
   link: string;
   className?: string;
 }
 
-const ArrowText: React.FC<ArrowTextProps> = ({ text, link, className }) => {
+const ButtonLink: React.FC<ButtonLinkProps> = ({ text, link, className }) => {
   return (
     <div
-      className={twMerge("flex items-center gap-x-2 group underline", className)}
+      className={twMerge("flex items-center gap-x-2", className)}
     >
       <a 
         href={link} 
-        className="text-black default-text font-semibold"
+        className="text-black default-text"
       >
         {text}
       </a>
@@ -43,4 +43,4 @@ const ArrowText: React.FC<ArrowTextProps> = ({ text, link, className }) => {
   );
 };
 
-export default ArrowText;
+export default ButtonLink;

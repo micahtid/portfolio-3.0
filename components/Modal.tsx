@@ -1,5 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { IoMdClose } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ModalProps {
   isOpen: boolean;
@@ -19,10 +20,25 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-neutral-900/60 backdrop-blur-[2px] fixed inset-0" />
-        <Dialog.Content className="fixed top-[50%] left-[50%] 
-        max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[650px]
-        translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white p-[30px] focus:outline-none overflow-y-auto">
+        <Dialog.Overlay asChild>
+          <motion.div 
+            className="bg-neutral-900/60 backdrop-blur-[2px] fixed inset-0" 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+        </Dialog.Overlay>
+        <Dialog.Content asChild>
+          <motion.div 
+            className="fixed top-[50%] left-[50%] 
+            max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[650px]
+            translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white p-[30px] focus:outline-none overflow-y-auto"
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
             <Dialog.Title className="text-2xl font-accent text-center font-bold mb-2">
                 {title}
             </Dialog.Title>
@@ -39,6 +55,7 @@ const Modal: React.FC<ModalProps> = ({
                     <IoMdClose size={24} />
                 </button>
             </Dialog.Close>
+          </motion.div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
