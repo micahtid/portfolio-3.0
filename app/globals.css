@@ -19,18 +19,18 @@
     font-family: var(--font-accent);
     font-style: italic;
   }
-  
-  .default-heading {
-    @apply text-8xl max-lg:text-6xl max-md:text-5xl font-semibold
-    tracking-tight; 
-  }
+
 
   .default-subheading {
     @apply text-5xl max-lg:text-4xl
   }
 
   .default-text {
-    @apply text-xl max-lg:text-lg;
+    @apply text-lg max-lg:text-base;
+  }
+
+  .default-label {
+    @apply text-base max-lg:text-sm;
   }
 
   .default-padding {
