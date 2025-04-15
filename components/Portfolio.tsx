@@ -15,6 +15,58 @@ interface ProjectStats {
 // Project stats will be populated from GitHub API...
 const projectStats: Record<string, ProjectStats> = {};
 
+// Skeleton card component for loading state
+const SkeletonCard = () => (
+  <div className="animate-pulse bg-white p-6 rounded-xl border border-gray-200 space-y-4">
+    <div className="text-gray-500 bg-gray-200 p-2 rounded-lg w-10 h-10"></div>
+    <div className="h-7 bg-gray-200 rounded w-2/3 mb-1"></div>
+    <div className="h-4 bg-gray-200 rounded w-full mb-1"></div>
+    <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+    <div className="flex justify-between items-center border-t border-gray-100 pt-4">
+      <div className="flex items-center gap-4">
+        <div className="h-5 bg-gray-200 rounded w-20"></div>
+        <div className="h-5 bg-gray-200 rounded w-24"></div>
+      </div>
+      <div className="h-8 w-20 bg-gray-200 rounded-md"></div>
+    </div>
+  </div>
+);
+
+// Project card component
+interface ProjectCardProps {
+  project: Project;
+  stats: ProjectStats;
+  onViewClick: (slug: string) => void;
+}
+
+const ProjectCard = ({ project, stats, onViewClick }: ProjectCardProps) => (
+  <div className="group bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 transition-colors space-y-4">
+    {/* Main Icon */}
+    <div className="text-gray-500 bg-gray-200 p-2 rounded-lg w-min">
+      {project.mainIcon}
+    </div>
+    
+    {/* Title and Description */}
+    <h3 className="default-text text-xl font-semibold">{project.title}</h3>
+    <p className="default-text text-gray-600">{project.description}</p>
+    
+    {/* Footer with Stats and View Button */}
+    <div className="flex justify-between items-center border-t border-gray-100 pt-4">
+      <div className="flex items-center gap-4 default-label text-gray-500">
+        <span>Commits: {stats.commitsCount}</span>
+        <span>Contributors: {stats.contributorsCount}</span>
+      </div>
+      <button 
+        onClick={() => onViewClick(project.slug)}
+        className="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 rounded-md border border-gray-200 default-label font-medium transition-colors"
+      >
+        View
+      </button>
+    </div>
+  </div>
+);
+
+// Main Portfolio component
 const Portfolio = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
@@ -77,23 +129,9 @@ const Portfolio = () => {
       <h2 className="default-subheading font-bold text-left mb-8 md:mb-12">Featured Projects</h2>
       
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[1, 2, 3].map((index) => (
-            <div key={index} className="animate-pulse bg-white p-6 rounded-xl border border-gray-100">
-              <div className="aspect-[16/9] bg-gray-200 rounded-xl mb-6 border-2 border-gray-100"></div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="h-7 bg-gray-200 rounded-lg w-1/3"></div>
-                <div className="h-6 bg-gray-200 rounded-lg w-20"></div>
-              </div>
-              <div className="h-5 bg-gray-200 rounded-lg w-full mb-2"></div>
-              <div className="h-5 bg-gray-200 rounded-lg w-5/6 mb-5"></div>
-              <div className="flex flex-wrap gap-2 mb-5">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-9 w-24 bg-gray-200 rounded-lg"></div>
-                ))}
-              </div>
-              <div className="h-6 bg-gray-200 rounded-lg w-full mt-4"></div>
-            </div>
+            <SkeletonCard key={index} />
           ))}
         </div>
       ) : (
@@ -106,61 +144,12 @@ const Portfolio = () => {
             };
             
             return (
-              <div 
-                key={project.slug} 
-                className="group cursor-pointer transition-all duration-300 bg-white p-4 md:p-6 rounded-xl border border-gray-200"
-                onClick={() => handleProjectClick(project.slug)}
-              >
-
-                {/* Image */}
-                <div className="relative overflow-hidden rounded-xl mb-4 md:mb-6">
-                  <div className="aspect-[16/9] bg-gray-100 border border-gray-200">
-                    {project.images && project.images.length > 0 ? (
-                      <img 
-                        src={project.images[0]} 
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                        <span className="text-gray-400">No image</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <span className="text-white text-sm font-medium">View Project</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">{project.title}</h3>
-                    <span className="text-xs px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg border border-blue-100">{project.category}</span>
-                  </div>
-                  
-                  <p className="default-text text-gray-600 mb-4 md:mb-5 line-clamp-2">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4 md:mb-5">
-                    {project.techs.map((tech, index) => (
-                      <span 
-                        key={index} 
-                        className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-100 px-3 py-2 rounded-lg text-xs"
-                      >
-                        {tech.icon}
-                        <span className="default-label">{tech.name}</span>
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center gap-3 text-xs text-gray-500 border-t border-gray-100 pt-4 mt-auto">
-                    <span className="px-2 py-1 bg-gray-50 rounded-md">Commits: {stats.commitsCount}</span>
-                    <span className="px-2 py-1 bg-gray-50 rounded-md">Contributors: {stats.contributorsCount}</span>
-                  </div>
-                </div>
-              </div>
+              <ProjectCard 
+                key={project.slug}
+                project={project}
+                stats={stats}
+                onViewClick={handleProjectClick}
+              />
             );
           })}
         </div>

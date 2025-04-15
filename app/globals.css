@@ -30,7 +30,7 @@
   }
 
   .default-label {
-    @apply text-base max-lg:text-sm;
+    @apply text-sm max-lg:text-xs;
   }
 
   .default-padding {

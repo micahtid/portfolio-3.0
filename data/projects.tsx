@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs, FaAws, FaFigma } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiFirebase, SiMongodb, SiTypescript } from 'react-icons/si';
+import { HiOutlineUsers, HiOutlineSearch, HiOutlineClipboardCheck } from 'react-icons/hi';
 
 export interface Technology {
   name: string;
@@ -12,6 +13,7 @@ export interface Project {
   description: string;
   overview: string;
   category: string;
+  mainIcon: React.ReactNode;
   techs: Technology[];
   videoUrl?: string;
   appUrl?: string;
@@ -26,6 +28,7 @@ export const projects: Project[] = [
     description: "A social network platform for Influencers, agencies and brands to collaborate for business purposes.",
     overview: "Mira is a comprehensive social networking platform designed specifically for influencers, agencies, and brands to facilitate business collaborations. The platform provides tools for profile management, campaign creation, analytics tracking, and secure communication between parties. Built with scalability in mind, Mira uses React for the frontend, Node.js for the backend, and MongoDB for data storage, all hosted on AWS infrastructure.",
     category: "Social Platform",
+    mainIcon: <HiOutlineUsers size={24} />,
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     appUrl: "https://app.mira.example.com",
     repositoryUrl: "https://github.com/Not-Micah/mira",
@@ -49,6 +52,7 @@ export const projects: Project[] = [
     description: "Enterprise search for modern workplaces with AI-powered features.",
     overview: "Me2 is an advanced enterprise search solution designed for modern workplaces. It leverages AI to deliver personalized search results based on user behavior and preferences. The platform includes features like document indexing, natural language processing, and integration with popular workplace tools. Built with Next.js and TypeScript for type safety, Me2 uses TailwindCSS for styling and Firebase for backend services.",
     category: "Enterprise Tool",
+    mainIcon: <HiOutlineSearch size={24} />,
     videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
     appUrl: "https://app.me2.example.com",
     repositoryUrl: "https://github.com/Not-Micah/me2",
@@ -71,6 +75,7 @@ export const projects: Project[] = [
     description: "Project management tool with AI-powered insights and team collaboration features.",
     overview: "Restoring Rainbows is a comprehensive project management tool that combines traditional task tracking with AI-powered insights to help teams work more efficiently. The platform includes features for task assignment, progress tracking, resource allocation, and automated reporting. The intuitive interface, designed in Figma, is built with React and styled with TailwindCSS, while Firebase provides real-time data synchronization and user authentication.",
     category: "Project Management",
+    mainIcon: <HiOutlineClipboardCheck size={24} />,
     videoUrl: "https://www.youtube.com/embed/C0DPdy98e4c",
     appUrl: "https://app.restoring-rainbows.example.com",
     repositoryUrl: "https://github.com/Not-Micah/restoring-rainbows",
