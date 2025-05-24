@@ -19,22 +19,12 @@ const Hero = () => {
       </h1>
 
       <p className="default-text">
-        I&apos;m an A-Levels student at <a href="https://surabayaeuropeanschool.com/id/" className={linkClass} target="_blank">
-          Surabaya European School
-        </a> and a prospective Computer Science student at <a href="https://raikes.unl.edu/" className={linkClass} target="_blank">
-          Jeffrey S. Raikes
-        </a> / <a href="https://www.purdue.edu/" className={linkClass} target="_blank">
-          Purdue
-        </a> / <a href="https://umich.edu/" className={linkClass} target="_blank">
-          University of Michigan
-        </a>.
-      </p>
+        Previously scoring 'Highest Mark in Country for AS Level Computer Science', I'm an incoming Software Engineering major at
+        <a href="https://raikes.unl.edu/" className={linkClass} target="_blank">Jeffrey S. Raikes.</a>{" "}
 
-      <p className="default-text">
-      My tech stack includes React, Next.js, TailwindCSS, and Firebase.
-        While specializing in database management, I have a soft spot for minimal front-ends. Currently I&apos;m leading the development of <a href="/projects" className={linkClass}>Mira</a>!
+        My tech stack includes React, Next.js, TailwindCSS, and Firebase.
+        Currently I&apos;m leading the development of <a href="/projects" className={linkClass}>Mira</a>!
       </p>
-
       
       {/* <ButtonLink text="Visit Portfolio" link="/portfolio" /> */}
 

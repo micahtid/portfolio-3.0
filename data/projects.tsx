@@ -92,6 +92,28 @@ export const projects: Project[] = [
       { name: "Figma", icon: <FaFigma size={20} /> }
     ]
   },
+  { 
+    title: "Cambridge Marker",
+    slug: "", // Intentionally Empty
+    description: "Automated marking system for Cambridge International Examinations with AI-powered grading.",
+    overview: "Cambridge Marker is an innovative educational tool designed to automate the grading process for Cambridge International Examinations. Using advanced AI algorithms, it analyzes student responses against marking schemes to provide consistent and objective grading. The system includes features for customizable rubrics, detailed feedback generation, and statistical analysis of class performance. This project was developed as part of an educational research initiative.",
+    category: "Education",
+    mainIcon: <HiOutlineClipboardCheck size={24} />,
+    videoUrl: "https://www.youtube.com/embed/example",
+    appUrl: "https://cambridge-marker.example.edu",
+    // No repositoryUrl
+    images: [
+      "/cambridge-marker/1.jpg",
+      "/cambridge-marker/2.jpg",
+      "/cambridge-marker/3.jpg"
+    ],
+    techs: [
+      { name: "Python", icon: <SiTypescript size={20} /> },
+      { name: "TensorFlow", icon: <SiTailwindcss size={20} /> },
+      { name: "Flask", icon: <FaNodeJs size={20} /> },
+      { name: "AWS", icon: <FaAws size={20} /> }
+    ]
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
