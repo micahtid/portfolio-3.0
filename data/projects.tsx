@@ -70,7 +70,7 @@ export const projects: Project[] = [
     ]
   },
   { 
-    title: "Restoring Rainbows",
+    title: "Intern @ Restoring Rainbows",
     slug: "restoring-rainbows",
     description: "Project management tool with AI-powered insights and team collaboration features.",
     overview: "Restoring Rainbows is a comprehensive project management tool that combines traditional task tracking with AI-powered insights to help teams work more efficiently. The platform includes features for task assignment, progress tracking, resource allocation, and automated reporting. The intuitive interface, designed in Figma, is built with React and styled with TailwindCSS, while Firebase provides real-time data synchronization and user authentication.",

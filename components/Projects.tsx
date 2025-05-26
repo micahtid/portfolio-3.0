@@ -152,7 +152,7 @@ const Projects = () => {
 
   return (
     <MinimalListSection
-      title="Featured Projects & Experiences"
+      title="Featured Experience"
       items={projects}
       loading={loading}
       renderItem={(project, idx) => (
