@@ -1,6 +1,5 @@
 "use client";
 
-import ProjectModal from "@/components/ProjectModal";
 import { useEffect, useState } from "react";
 
 const ModalProvider = () => {
@@ -16,7 +15,6 @@ const ModalProvider = () => {
 
   return (
     <>
-        <ProjectModal />
     </>
   );
 };

@@ -32,7 +32,17 @@ function MinimalListSection<T>({ title, items, loading, renderItem, buttonLink, 
       <div className="flex flex-col gap-5">
         {loading
           ? [1, 2, 3].map((idx) => (
-              <div key={idx} className="h-[56px] bg-gray-100 animate-pulse rounded" />
+              <div key={idx} className="w-full py-4 px-3 border-b border-gray-200 rounded-lg mb-2">
+                <div className="h-6 bg-gray-200 animate-pulse rounded w-1/3 mb-2"></div>
+                <div className="h-4 bg-gray-100 animate-pulse rounded w-3/4 mb-3"></div>
+                <div className="flex justify-between items-center mt-3">
+                  <div className="flex gap-4">
+                    <div className="h-4 bg-gray-100 animate-pulse rounded w-24"></div>
+                    <div className="h-4 bg-gray-100 animate-pulse rounded w-24"></div>
+                  </div>
+                  <div className="h-8 bg-gray-200 animate-pulse rounded w-16"></div>
+                </div>
+              </div>
             ))
           : items.map(renderItem)}
       </div>
@@ -91,7 +101,7 @@ function MinimalProjectRow({ project, stats, onViewClick }: { project: Project; 
   );
 }
 
-const Projects = () => {
+const Experience = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
@@ -169,4 +179,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Experience;

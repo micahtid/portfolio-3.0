@@ -5,13 +5,13 @@ import {
   FaPython, 
   FaHtml5, 
   FaCss3Alt, 
-  FaJs, 
   FaReact, 
   FaJava, 
   FaStripe 
 } from 'react-icons/fa';
 import { 
   SiTypescript, 
+  SiJavascript,
   SiExpress, 
   SiNextdotjs, 
   SiTailwindcss, 
@@ -32,7 +32,7 @@ interface TechnologyIconProps {
 
 const TechnologyIcon = ({ icon, size = 48 }: TechnologyIconProps) => {
   return (
-    <div className="flex items-center justify-center mx-4 md:mx-8 opacity-40 hover:opacity-80 transition-opacity duration-300">
+    <div className="flex items-center justify-center mx-4 md:mx-8 opacity-20 hover:opacity-40 transition-opacity duration-300">
       <div style={{ fontSize: size, color: '#333333' }}>{icon}</div>
     </div>
   );
@@ -42,7 +42,7 @@ const Technologies = () => {
   const [iconSize, setIconSize] = useState(48);
 
   useEffect(() => {
-    // Handle responsive icon sizing
+    // Handle Responsive Icon Sizing
     const handleResize = () => {
       if (typeof window !== 'undefined') {
         if (window.innerWidth < 640) {
@@ -55,10 +55,10 @@ const Technologies = () => {
       }
     };
     
-    // Set initial size
+    // Set Initial Size
     handleResize();
     
-    // Add event listener for window resize
+    // Add Event Listener for Window Resize
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
@@ -69,7 +69,7 @@ const Technologies = () => {
     { icon: <FaPython /> },
     { icon: <FaHtml5 /> },
     { icon: <FaCss3Alt /> },
-    { icon: <FaJs /> },
+    { icon: <SiJavascript /> },
     { icon: <SiTypescript /> },
     { icon: <FaReact /> },
     { icon: <SiExpress /> },
