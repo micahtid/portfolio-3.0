@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getProjectBySlug, Project } from '@/data/projects';
@@ -34,7 +34,7 @@ const TechBadge = ({ name, icon }: { name: string; icon: React.ReactNode }) => (
   </div>
 );
 
-export default function ProjectPage() {
+function ProjectPage() {
   const searchParams = useSearchParams();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
@@ -204,5 +204,26 @@ export default function ProjectPage() {
         </div>
       </div>
     </section>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <section className="max-w-[1200px] w-full mx-auto px-3 py-16 max-lg:py-8">
+      <div className="w-full animate-pulse">
+        <div className="h-8 bg-gray-100 rounded w-1/3 mb-6"></div>
+        <div className="h-64 bg-gray-100 rounded w-full mb-8"></div>
+        <div className="h-4 bg-gray-100 rounded w-full mb-2"></div>
+        <div className="h-4 bg-gray-100 rounded w-5/6 mb-6"></div>
+      </div>
+    </section>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <ProjectPage />
+    </Suspense>
   );
 }
