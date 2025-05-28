@@ -66,7 +66,7 @@ export default function ProjectPage() {
       <section className="max-w-[1200px] w-full mx-auto px-3 py-16 max-lg:py-8">
         <div className="text-center py-16">
           <h1 className="default-subheading font-bold mb-4">Project Not Found</h1>
-          <p className="default-text mb-8">The project you're looking for doesn't exist or has been removed.</p>
+          <p className="default-text mb-8">The project you&apos;re looking for doesn&apos;t exist or has been removed.</p>
           <LinkButton href="/">Return Home</LinkButton>
         </div>
       </section>

@@ -14,7 +14,7 @@ const Hero = () => {
     ">
 
       <h1 className="default-subheading font-bold z-10">
-        I'm Micah, I build <br className="max-sm:hidden" />
+        I&apos;m Micah, I build <br className="max-sm:hidden" />
         <span className="font-accent font-medium">full-stack</span> applications.
       </h1>
 

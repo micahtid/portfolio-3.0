@@ -57,7 +57,7 @@ const Contact = () => {
         <div className="flex-1 flex flex-col justify-start">
           <p className="default-text">
             Interested in collaborating on a project or looking to get a custom website? 
-            I'm available for freelance work and new opportunities.
+            I&apos;m available for freelance work and new opportunities.
           </p>
         </div>
         

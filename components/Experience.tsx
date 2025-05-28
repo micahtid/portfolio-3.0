@@ -108,7 +108,7 @@ const Experience = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const fetchRepoDetails = async () => {
+    const fetchProjectStats = async (projects: Project[]) => {
       try {
         await Promise.all(
           projects.filter(project => project.slug).map(async (project) => {
@@ -155,7 +155,7 @@ const Experience = () => {
       }
     };
 
-    fetchRepoDetails();
+    fetchProjectStats(projects);
   }, []);
 
   const handleProjectClick = (slug: string) => {
@@ -167,7 +167,7 @@ const Experience = () => {
       title="Featured Experience"
       items={projects}
       loading={loading}
-      renderItem={(project, idx) => (
+      renderItem={(project) => (
         <MinimalProjectRow
           key={project.slug}
           project={project}
