@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import ModalProvider from "@/providers/ModalProvider";
 
 export const metadata: Metadata = {
-  title: "Micah's Portfolio",
+  title: "Micah Tid",
   description: "Personal portfolio showcasing my work and skills",
 };
 

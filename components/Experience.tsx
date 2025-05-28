@@ -27,7 +27,9 @@ interface MinimalListSectionProps<T> {
 
 function MinimalListSection<T>({ title, items, loading, renderItem, buttonLink, buttonText }: MinimalListSectionProps<T>) {
   return (
-    <section className="max-w-[1200px] w-full mx-auto px-3 py-16 max-lg:py-8">
+    <section 
+    id="experience"
+    className="max-w-[1200px] w-full mx-auto px-3 py-16 max-lg:py-8">
       <h2 className="default-subheading font-bold text-left mb-8 md:mb-12">{title}</h2>
       <div className="flex flex-col gap-5">
         {loading

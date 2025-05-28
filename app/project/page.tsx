@@ -76,11 +76,11 @@ export default function ProjectPage() {
   return (
     <section className="max-w-[1200px] w-full mx-auto px-3 py-16 max-lg:py-8">
       <Link 
-        href="/" 
+        href="/#experience" 
         className="inline-flex items-center text-gray-500 hover:text-gray-700 mb-8 group transition-colors"
       >
         <HiArrowLeft className="mr-2 text-sm" />
-        Back to Projects
+        Back to Experiences
       </Link>
 
       {/* Project Header and Description */}

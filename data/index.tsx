@@ -1,7 +1,7 @@
 export const navLinks = [
-    {label: "Home", href: "/"},
-    {label: "Portfolio", href: "/portfolio"},
-    {label: "W.O.H", href: "/wall-of-highlights"},
+    {label: "Experience", href: "/#experience"},
+    {label: "Contact", href: "/#contact"},
+    {label: "Resume", href: "https://docs.google.com/document/d/1CIw58UN0GNt2kB2r6z-S6WmOSwsaRl0ZKTVzN1FtJDM/edit?usp=sharing"},
 ]
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";

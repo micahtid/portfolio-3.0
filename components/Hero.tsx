@@ -19,13 +19,9 @@ const Hero = () => {
       </h1>
 
       <p className="default-text">
-        Previously scoring 'Highest Mark in Country for AS Level Computer Science', I'm an incoming Software Engineering major at
-        <a href="https://raikes.unl.edu/" className={linkClass} target="_blank">Jeffrey S. Raikes.</a>{" "}
-
-        My tech stack includes React, Next.js, TailwindCSS, and Firebase.
-        Currently I&apos;m leading the development of <a href="/projects" className={linkClass}>Mira</a>!
+        I&apos;m an incoming Software Engineering major at the <a href="https://www.unl.edu/" className={linkClass} target="_blank">Raikes School in University of Nebraska-Lincoln</a>. Previously I scored the highest mark in Indonesia for AS Level Computer Science. I am currently leading the development of <a href="/projects" className={linkClass}>Mira</a>!
       </p>
-      
+
       {/* <ButtonLink text="Visit Portfolio" link="/portfolio" /> */}
 
       <div className="flex items-center gap-x-4 mt-4">
