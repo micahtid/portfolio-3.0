@@ -122,6 +122,7 @@ const Experience = () => {
               ]);
 
               const repoData = (await repoRes.json()) as { created_at?: string };
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const contributors = contributorsRes.ok ? ((await contributorsRes.json()) as any[]) : [];
 
               let totalCommits = 1;
