@@ -68,51 +68,7 @@ export const projects: Project[] = [
       { name: "Firebase", icon: <SiFirebase size={20} /> },
       { name: "Zoom API", icon: <SiZoom size={20} /> }
     ]
-  },
-  { 
-    title: "Intern @ Restoring Rainbows",
-    slug: "restoring-rainbows",
-    description: "Developed a comprehensive website and admin panel for a non-profit organization during a 3-month internship.",
-    overview: "During a three-month internship from August to November, I worked directly with the co-founders of Restoring Rainbows to develop their organizational website from scratch. As the sole developer, I created a comprehensive platform showcasing the non-profit's branches, board members, blog content, and more. The project includes a robust administrator backend panel allowing staff to manage dynamic content without technical knowledge.",
-    category: "Non-Profit Website",
-    mainIcon: <HiOutlineClipboardCheck size={24} />,
-    appUrl: "https://restoringrainbows.org",
-    repositoryUrl: "https://github.com/Not-Micah/restoring-rainbows",
-    images: [
-      "/restoring-rainbows/1.jpg",
-      "/restoring-rainbows/2.jpg",
-      "/restoring-rainbows/3.jpg",
-      "/restoring-rainbows/4.jpg"
-    ],
-    techs: [
-      { name: "React", icon: <FaReact size={20} /> },
-      { name: "Node.js", icon: <FaNodeJs size={20} /> },
-      { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "Google Maps API", icon: <SiGooglemaps size={20} /> },
-      { name: "Instagram API", icon: <SiInstagram size={20} /> }
-    ]
-  },
-  { 
-    title: "Introship",
-    slug: "introship", // Updated from empty
-    description: "A personalized AI agent with a clean interface helping students land their first internship.",
-    overview: "Coming Soon...",
-    category: "Career Development",
-    mainIcon: <HiOutlineLightBulb size={24} />,
-    appUrl: "https://introship.app",
-    // No repositoryUrl
-    images: [
-      "/introship/1.jpg",
-      "/introship/2.jpg",
-      "/introship/3.jpg"
-    ],
-    techs: [
-      { name: "React", icon: <FaReact size={20} /> },
-      { name: "Node.js", icon: <FaNodeJs size={20} /> },
-      { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "OpenAI", icon: <TbBrandOpenai size={20} /> }
-    ]
-  },
+  }
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
