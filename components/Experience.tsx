@@ -11,7 +11,7 @@ import ListItemCard from './ListItemCard';
 
 
 const Experience = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading] = useState<boolean>(false);
   const router = useRouter();
   
   const handleExperienceClick = (exp: Experience) => {
