@@ -8,7 +8,6 @@ import type { Project } from '@/data/projects';
 
 import ListSection from './ListSection';
 import ListItemCard from './ListItemCard';
-import ButtonLink from './ButtonLink';
 
 interface ProjectStats {
   commitsCount: number;
