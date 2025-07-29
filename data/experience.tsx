@@ -17,8 +17,8 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "Intern @ Restoring Rainbows",
-    description: "Developed a comprehensive website and admin panel for a non-profit organization during a 3-month internship.",
-    overview: "During a three-month internship from August to November, I worked directly with the co-founders of Restoring Rainbows to develop their organizational website from scratch. As the sole developer, I created a comprehensive platform showcasing the non-profit's branches, board members, blog content, and more. The project includes a robust administrator backend panel allowing staff to manage dynamic content without technical knowledge.",
+    description: "Developed a full-featured website and administrative panel for a NPO during a three-month internship.",
+    overview: "I worked directly with the co-founders of Restoring Rainbows to build their organizational website from the ground up. The site features pages highlighting the nonprofit’s branches, board members, blog content, and more. It also includes a robust administrative backend panel, allowing staff to easily manage dynamic content. Throughout the project, I integrated several APIs, including Google Maps and Instagram.",
     category: "Non-Profit Website",
     mainIcon: <HiOutlineClipboardCheck size={24} />,
     appUrl: "https://restoringrainbows.org",

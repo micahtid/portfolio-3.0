@@ -27,17 +27,18 @@ export const projects: Project[] = [
     title: "Mira",
     slug: "mira",
     description: "[Halted] An application platform connecting youth-led organizations with potential interns and volunteers.",
-    overview: "Mira is a comprehensive application platform designed for youth-led organizations to post internship and volunteer positions, both onsite and remote. As lead developer, I directed the development of both frontend and backend systems, while managing a team of three developers and a social media manager. The platform features customizable application questions, applicant resume viewing, and premium features for organizations. Despite strong technical implementation, development was halted due to challenges in reaching critical mass in this niche market.",
+    overview: "Mira is a two-sided platform. (2) It enables youth-led organizations to post onsite and remote internship and volunteer opportunities, review applicants, and select candidates. (1) Likewise, it allows high school students to easily apply for these positions. As lead developer, I managed both the frontend and backend, directing a team of three developers and a social media manager. This was my first project experimenting with email notifications and Stripe subscriptions. Unfortunately, it was eventually halted due to limited reach in this niche market.",
     category: "Application Platform",
     mainIcon: <HiOutlineUsers size={24} />,
-    appUrl: "https://app.mira.example.com",
+    appUrl: "https://mira-volunteer.vercel.app/",
     repositoryUrl: "https://github.com/Not-Micah/mira",
     images: [
       "/mira/1.jpg",
       "/mira/2.jpg",
       "/mira/3.jpg",
       "/mira/4.jpg",
-      "/mira/5.jpg"
+      "/mira/5.jpg",
+      "/mira/6.jpg"
     ],
     techs: [
       { name: "React", icon: <FaReact size={20} /> },
@@ -50,11 +51,11 @@ export const projects: Project[] = [
     title: "Me2",
     slug: "me2",
     description: "[Halted] A compatibility-based chat application connecting students with similar profiles.",
-    overview: "Me2 is an innovative chat application designed for students, featuring a sophisticated compatibility algorithm that matches users based on stored profile criteria. As lead developer, I oversaw the entire project while collaborating with one co-developer who focused on frontend implementation. The platform offers features including send/accept/decline chat requests, 48-hour chat rooms, Zoom-integrated study rooms, and global chat rooms. Despite reaching a waitlist of 1,000 users, development was ultimately halted.",
+    overview: "Me2 is a chat platform designed specifically for students. Using a compatibility algorithm, it calculates scores based on stored profile data, enabling students to connect with those most similar to them. Me2 allows students to send chat requests and join study rooms together. As lead developer, working alongside one co-developer, I focused primarily on backend development—designing the database architecture for chat data and integrating APIs such as Zoom. Despite building a waitlist of over 1,000 users, Me2 was ultimately halted due to limited development resources.",
     category: "Social Platform",
     mainIcon: <HiOutlineSearch size={24} />,
     videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
-    appUrl: "https://app.me2.example.com",
+    appUrl: "https://me2-beta.vercel.app/",
     repositoryUrl: "https://github.com/Not-Micah/me2",
     images: [
       "/me2/1.jpg",

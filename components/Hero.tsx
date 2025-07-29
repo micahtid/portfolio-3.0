@@ -19,8 +19,13 @@ const Hero = () => {
       </h1>
 
       <p className="default-text">
-        I&apos;m an incoming Software Engineering major at the <a href="https://www.unl.edu/" className={linkClass} target="_blank">Raikes School in University of Nebraska-Lincoln</a>. Previously I scored the highest mark in Indonesia for AS Level Computer Science. I am currently leading the development of <a href="/projects" className={linkClass}>Mira</a>!
+        Having previously scored the Highest Mark in Indonesia for AS Level Computer Science, I&apos;m a freshman Software Engineering major at the{" "}
+        <a href="https://www.unl.edu/" className={linkClass} target="_blank" rel="noopener noreferrer">
+          Raikes School, University of Nebraska–Lincoln
+        </a>
+        . I&apos;m currently open to project collaborations and seeking internship opportunities.
       </p>
+
 
       {/* <ButtonLink text="Visit Portfolio" link="/portfolio" /> */}
 
