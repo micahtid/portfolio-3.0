@@ -1,17 +1,25 @@
+'use client';
+
 import { socialLinks } from "@/data";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const linkClass = "underline text-gray-500 hover:text-gray-700 transition-colors";
 
   return (
-    <section className="
-      max-w-[1200px] w-full mx-auto 
-      lg:min-h-[calc(100vh-200px)]
-      default-padding py-[120px] max-lg:py-20 max-md:py-12
-      flex flex-col justify-center gap-y-8
-      max-lg:justify-start
-    ">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="
+        max-w-[1200px] w-full mx-auto 
+        lg:min-h-[calc(100vh-200px)]
+        default-padding py-[120px] max-lg:py-20 max-md:py-12
+        flex flex-col justify-center gap-y-8
+        max-lg:justify-start
+      "
+    >
 
       <h1 className="default-subheading font-bold z-10">
         I&apos;m Micah, I build <br className="max-sm:hidden" />
@@ -43,7 +51,7 @@ const Hero = () => {
           </a>
         ))}
       </div>
-    </section>  
+    </motion.section>  
   );
 };
 
