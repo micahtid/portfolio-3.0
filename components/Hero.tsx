@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="
       max-w-[1200px] w-full mx-auto 
-      min-h-[calc(100vh-200px)]
+      lg:min-h-[calc(100vh-200px)]
       default-padding py-[120px] max-lg:py-20 max-md:py-12
       flex flex-col justify-center gap-y-8
       max-lg:justify-start

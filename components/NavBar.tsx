@@ -2,7 +2,7 @@
 
 import { navLinks } from '@/data';
 import { useState } from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import { RiMenu4Fill, RiCloseLine } from 'react-icons/ri';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -81,7 +81,7 @@ const NavBar = () => {
           onClick={openMenu}
           aria-label="Open menu"
         >
-          <RiMenu3Line size={24} />
+          <RiMenu4Fill size={24} />
         </button>
       </nav>
       
