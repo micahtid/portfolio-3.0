@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
       { name: "Google Maps API", icon: <SiGooglemaps size={20} /> },
       { name: "Instagram API", icon: <SiInstagram size={20} /> }
     ],
-    timeframe: "Aug 2025 - Nov 2025"
+    timeframe: "Aug 2024 - Dec 2024"
   }
 ];
 
