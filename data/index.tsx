@@ -10,7 +10,7 @@ import { BiLogoGmail } from "react-icons/bi";
 export const socialLinks = [
     {
         icon: <FaLinkedin size={25} />,
-        href: "https://www.linkedin.com/in/micah-tidball-a1b28231b/"
+        href: "https://www.linkedin.com/in/micah-tid-a1b28231b/"
     },
     {
         icon: <BiLogoGmail size={25} />,
