@@ -19,21 +19,23 @@ const Experience = () => {
   };
 
   return (
-    <ListSection
-      title="Featured Experience"
-      items={experiences}
-      loading={loading}
-      renderItem={(experience) => (
-        <ListItemCard
-          key={experience.title}
-          title={experience.title}
-          description={experience.description}
-          onViewClick={() => handleExperienceClick(experience)}
-          showGithubStats={false}
-          timeframe={experience.timeframe}
-        />
-      )}
-    />
+    <div id="experience" className="w-full">
+      <ListSection
+        title="Featured Experience"
+        items={experiences}
+        loading={loading}
+        renderItem={(experience) => (
+          <ListItemCard
+            key={experience.title}
+            title={experience.title}
+            description={experience.description}
+            onViewClick={() => handleExperienceClick(experience)}
+            showGithubStats={false}
+            timeframe={experience.timeframe}
+          />
+        )}
+      />
+    </div>
   );
 };
 
