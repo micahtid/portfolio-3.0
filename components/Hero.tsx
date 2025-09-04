@@ -18,8 +18,27 @@ const Hero = () => {
         default-padding py-[120px] max-lg:py-20 max-md:py-12
         flex flex-col justify-center gap-y-8
         max-lg:justify-start
+        relative overflow-hidden
       "
     >
+      {/* Full Screen Grid Background */}
+      <motion.div
+        className="fixed inset-0 opacity-10 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 2, delay: 0.5 }}
+      >
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #94a3b8 1px, transparent 1px),
+              linear-gradient(to bottom, #94a3b8 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </motion.div>
 
       <h1 className="default-subheading font-bold z-10">
         I&apos;m Micah, I build <br className="max-sm:hidden" />

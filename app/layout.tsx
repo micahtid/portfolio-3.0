@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 import NavBar from "@/components/NavBar";
 import ModalProvider from "@/providers/ModalProvider";
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics/>
       <body
         className={`antialiased`}
       >
