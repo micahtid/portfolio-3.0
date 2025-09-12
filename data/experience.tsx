@@ -17,7 +17,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "Intern @ Restoring Rainbows",
-    description: "Developed a full-featured website and administrative panel for a NPO during a three-month internship.",
+    description: "Developed a full-featured website and administrative panel for a NPO during a six-month internship.",
     overview: "I worked directly with the co-founders of Restoring Rainbows to build their organizational website from the ground up. The site features pages highlighting the nonprofit’s branches, board members, blog content, and more. It also includes a robust administrative backend panel, allowing staff to easily manage dynamic content. Throughout the project, I integrated several APIs, including Google Maps and Instagram.",
     category: "Non-Profit Website",
     mainIcon: <HiOutlineClipboardCheck size={24} />,
@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
       { name: "React", icon: <FaReact size={20} /> },
       { name: "Node.js", icon: <FaNodeJs size={20} /> },
       { name: "Firebase", icon: <SiFirebase size={20} /> },
-      { name: "Google Maps API", icon: <SiGooglemaps size={20} /> },
+      { name: "Open Street Map", icon: <SiGooglemaps size={20} /> },
       { name: "Instagram API", icon: <SiInstagram size={20} /> }
     ],
     timeframe: "Aug 2024 - Dec 2024"
