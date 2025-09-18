@@ -36,9 +36,9 @@ const Projects = () => {
             
             try {
               const [repoRes, commitsRes, contributorsRes] = await Promise.all([
-                fetch(`https://api.github.com/repos/Not-Micah/${project.slug}`),
-                fetch(`https://api.github.com/repos/Not-Micah/${project.slug}/commits?per_page=1`),
-                fetch(`https://api.github.com/repos/Not-Micah/${project.slug}/contributors`),
+                fetch(`https://api.github.com/repos/micahtid/${project.slug}`),
+                fetch(`https://api.github.com/repos/micahtid/${project.slug}/commits?per_page=1`),
+                fetch(`https://api.github.com/repos/micahtid/${project.slug}/contributors`),
               ]);
 
               const repoData = (await repoRes.json()) as { created_at?: string };

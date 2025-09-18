@@ -29,7 +29,7 @@ export default function TemplatePage() {
         </p>
       </div>
       <Link
-        href="https://github.com/Not-Micah/react-starter-kit"
+        href="https://github.com/micahtid/react-starter-kit"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center px-6 py-2 rounded-md border border-gray-200 bg-white/60 hover:bg-white/80 text-gray-900 font-semibold text-base transition-colors"

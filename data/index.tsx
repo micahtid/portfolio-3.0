@@ -18,6 +18,6 @@ export const socialLinks = [
     },
     {
         icon: <FaGithub size={25} />,
-        href: "https://github.com/Not-Micah"
+        href: "https://github.com/micahtid"
     },
 ];

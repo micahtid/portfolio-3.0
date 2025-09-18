@@ -31,7 +31,7 @@ export const projects: Project[] = [
     category: "Application Platform",
     mainIcon: <HiOutlineUsers size={24} />,
     appUrl: "https://mira-volunteer.vercel.app/",
-    repositoryUrl: "https://github.com/Not-Micah/mira",
+    repositoryUrl: "https://github.com/micahtid/mira",
     images: [
       "/mira/1.jpg",
       "/mira/2.jpg",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     mainIcon: <HiOutlineSearch size={24} />,
     videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
     appUrl: "https://me2-beta.vercel.app/",
-    repositoryUrl: "https://github.com/Not-Micah/me2",
+    repositoryUrl: "https://github.com/micahtid/me2",
     images: [
       "/me2/1.jpg",
       "/me2/2.jpg",
